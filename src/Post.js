@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import fetchingData, { postDetail }  from './Redux/action'
 import {useNavigate} from 'react-router-dom'
+import CreatePost from './CreatePost'
 
 
 function Post() {
@@ -19,12 +20,13 @@ function Post() {
 
   return (
     <div>
+        <CreatePost/>
     {postsData.map((data,index)=>{
       return(
         <div key={index} className='card'>
           <h1>{data.title}</h1>
           <p>{data.body}</p>
-          <button onClick={getSingleProduct(data.id)}>ViewDetails</button>
+          <button onClick={()=>getSingleProduct(data.id)}>ViewDetails</button>
         </div>
       )
     })}

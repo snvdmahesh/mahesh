@@ -34,13 +34,21 @@ export default fetchingData
         }
     }
 }
-// export default postDetail
 
-//create New one
-// export const createNewProductData=()=>{
-//     return async(dispatch)=>{
-//         try{
-    
-//         }
-//     }
-// }
+//create a post
+
+export const create=(newDetails)=>async (dispatch)=>{
+    try{
+        
+        const response=await axios.post("https://jsonplaceholder.typicode.com/posts",newDetails)
+        if(response.status===200){
+            dispatch({type:CREATE,payload:response.data})
+            console.log(response.data)
+
+        }
+
+    }catch(error){
+        console.log(error)
+
+    }
+}

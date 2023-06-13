@@ -15,6 +15,11 @@ const ReducerData=(state={card:[],single:[]},action)=>{
                     single:[action.payload]
                     
                 }
+            case CREATE:
+                return{
+                    ...state,
+                    card:action.payload
+                }
             default :return state
      }
 }

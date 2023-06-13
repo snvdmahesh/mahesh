@@ -73,7 +73,7 @@ const emailHandler = (e) => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="text" onBlur={emailrerrorHandler} value={userName} onChange={emailHandler} placeholder="Enter email"/>
+                    <Form.Control type="text" onBlur={emailrerrorHandler} value={email} onChange={emailHandler} placeholder="Enter email"/>
                     {eerror && <div>{eerror}</div>}
                 </Form.Group>
                 
