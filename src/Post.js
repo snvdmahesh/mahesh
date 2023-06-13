@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import fetchingData, { postDetail }  from './Redux/action'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import CreatePost from './CreatePost'
 
 
@@ -9,6 +9,8 @@ function Post() {
   const postsData=useSelector((state)=>state.Posts.card)
   const navigate=useNavigate()
   console.log(postsData)
+
+  
   const getSingleProduct=(id)=>{
     dispatch(postDetail(id))
     navigate(`/posts/${id}`)
@@ -20,6 +22,7 @@ function Post() {
 
   return (
     <div>
+        <Link to='/login' style={{textAlign:'center'}}>LoginPage</Link>
         <CreatePost/>
     {postsData.map((data,index)=>{
       return(

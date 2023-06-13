@@ -25,7 +25,7 @@ const CreatePost = () => {
   return (
     <div>
       <h5>Create Post</h5>
-      <form className='d-flex flex-column fromcontainer' onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <label>Title</label>
         <input  value={title} onChange={(e)=>setTitle(e.target.value)} placeholder='Enter Title' type="text" />
         <label>Body</label>
